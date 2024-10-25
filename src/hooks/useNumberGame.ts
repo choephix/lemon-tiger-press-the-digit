@@ -3,14 +3,15 @@ import { useState, useCallback, useEffect } from 'react';
 import { SUCCESS_ANIMATION_DURATION } from '../components/SuccessAnimation';
 
 export function useNumberGame() {
-  const [currentNumber, setCurrentNumber] = useState<number>(0);
-  const [numbers, setNumbers] = useState<number[]>([]);
+  const [currentNumber, setCurrentNumber] = useState<string>('1');
+  const [numbers, setNumbers] = useState<string[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
 
   const initNumbers = useCallback(() => {
-    return Array.from({ length: 10 }, (_, i) => i)
-      .sort(() => Math.random() - 0.5);
+    return Array.from({ length: 9 }, (_, i) => i + 1)
+      .sort(() => Math.random() - 0.5)
+      .map(String);
   }, []);
 
   const pickNextNumber = useCallback(() => {

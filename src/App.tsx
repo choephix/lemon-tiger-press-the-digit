@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (showSuccess) return;
-      if (parseInt(e.key) === currentNumber) {
+      if (e.key === currentNumber) {
         handleCorrectGuess();
         console.log(e.key, currentNumber)
       }
@@ -37,9 +37,9 @@ function App() {
         {showSuccess ? (
           <SuccessAnimation />
         ) : (
-          <NumberDisplay 
-            number={currentNumber} 
-            textColor={textColor} 
+          <NumberDisplay
+            number={currentNumber}
+            textColor={textColor}
           />
         )}
       </AnimatePresence>
