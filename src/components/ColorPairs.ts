@@ -1,10 +1,10 @@
 export const colorPairs = [
-  ['bg-pink-400', 'text-yellow-300'],
-  ['bg-purple-500', 'text-green-300'],
-  ['bg-blue-500', 'text-orange-300'],
-  ['bg-green-500', 'text-pink-300'],
-  ['bg-yellow-400', 'text-purple-400'],
-  ['bg-orange-400', 'text-blue-300'],
+  ['bg-pink-600', 'text-yellow-300'],
+  ['bg-purple-600', 'text-green-300'],
+  ['bg-blue-600', 'text-orange-300'],
+  ['bg-green-600', 'text-pink-400'],
+  ['bg-orange-700', 'text-purple-300'],
+  ['bg-yellow-500', 'text-blue-500'],
 ] as const;
 
 export type ColorPair = typeof colorPairs[number];

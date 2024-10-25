@@ -27,10 +27,11 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [currentNumber, handleCorrectGuess, showSuccess]);
 
-  const [, textColor] = colorPairs[colorIndex];
+  const [bgColor, textColor] = colorPairs[colorIndex];
+  const actualBgColor = showSuccess ? 'bg-blue-950' : bgColor;
 
   return (
-    <div className="min-h-screen bg-blue-950 transition-colors duration-700 flex items-center justify-center overflow-hidden relative">
+    <div className={`min-h-screen ${actualBgColor} transition-colors duration-700 flex items-center justify-center overflow-hidden relative`}>
       <StarField />
       <AnimatePresence mode="wait">
         {showSuccess ? (
